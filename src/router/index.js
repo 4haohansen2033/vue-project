@@ -7,16 +7,15 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    component: () => import("../views/login/login.vue").then(resolve),
-    // component: resolve => {
-    //   import("../views/login/login.vue").then(resolve);
+    component: () => import("../components/container.vue"),
     children: [
+      {
+        path: "login",
+        component: () => import("../views/login/login.vue")
+      },
       {
         path: "home",
         component: () => import("../views/login/login.vue")
-        // component: resolve => {
-        //   import("../views/home/home.vue").then(resolve);
-        // }
       }
     ]
   }

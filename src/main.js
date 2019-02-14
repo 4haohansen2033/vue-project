@@ -8,7 +8,6 @@ import iView from "iview";
 import "iview/dist/styles/iview.css";
 import App from "./App.vue";
 
-Vue.use(VueRouter);
 Vue.use(iView);
 Vue.prototype.$moment = Vue.moment = moment;
 Vue.prototype.$lodash = Vue.lodash = lodash;
