@@ -5,7 +5,13 @@
 </template>
 <script>
 export default {
-  name: "CommonView"
+  name: "CommonView",
+  beforeCreate() {
+    console.log("before common");
+  },
+  created() {
+    console.log("load common");
+  }
 };
 </script>
 <style scoped>

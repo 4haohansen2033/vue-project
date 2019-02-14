@@ -5,7 +5,10 @@
 </template>
 <script>
 export default {
-  name: "Container"
+  name: "Container",
+  created() {
+    console.log("load container");
+  }
 };
 </script>
 <style scoped>

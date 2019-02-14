@@ -15,11 +15,21 @@ const routes = [
       },
       {
         path: "home",
-        component: () => import("../views/login/login.vue")
+        component: () => import("../views/home/home.vue")
       },
       {
         path: "/",
-        redirect: "/login"
+        component: () => import("../components/commonView.vue"),
+        children: [
+          {
+            path: "/",
+            redirect: "/login"
+          },
+          {
+            path: "/about",
+            component: () => import("../views/about/about.vue")
+          }
+        ]
       }
     ]
   }
