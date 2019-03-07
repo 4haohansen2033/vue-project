@@ -5,7 +5,7 @@
       <h1>采购系统<Icon type="md-analytics" /></h1>
       <Form ref="login" :model='login' :rules="loginRule">
         <FormItem prop="userName">
-          <Input type='text' v-model="login.userName" placeholder="用户名">
+          <Input type='text' v-model="login.userName" :placeholder="username">
             <Icon type="ios-person-outline" slot="prepend"></Icon>
           </Input>
         </FormItem> 
@@ -37,15 +37,23 @@ export default {
       }
     };
   },
+  computed: {
+    username() {
+      return this.$store.state.username;
+    }
+  },
   methods: {
     userLogin(name) {
-      this.$refs[name].validate(valid => {
-        if (valid) {
-          this.$Message.success("登录成功");
-        } else {
-          this.$Message.fail("登录失败");
-        }
-      });
+      console.log("1111");
+      this.$store.commit("LOGIN_STATE", { name: "hanse" });
+      // this.$refs[name].validate(valid => {
+      //   if (valid) {
+      //     this.$Message.success("登录成功");
+      //     this.$router.push({ path: "home" });
+      //   } else {
+      //     this.$Message.fail("登录失败");
+      //   }
+      // });
     }
   }
 };
